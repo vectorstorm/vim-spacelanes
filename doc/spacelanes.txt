@@ -1,0 +1,63 @@
+                 ____                  __~
+                / __/__  ___ ________ / /__ ____  ___ ___~
+               _\ \/ _ \/ _ `/ __/ -_) / _ `/ _ \/ -_|_-<~
+              /___/ .__/\_,_/\__/\__/_/\_,_/_//_/\__/___/~
+                 /_/~
+                              SPACELANES~
+
+         is a Vim plugin for navigating between commonly used files
+
+==============================================================================
+CONTENTS                                                    *Spacelanes-contents*
+
+    1. Usage ................. |Spacelanes-usage|
+    2. Mappings .............. |Spacelanes-mappings|
+    3. Configuration ......... |Spacelanes-configuration|
+    4. License ............... |Spacelanes-license|
+    5. Bugs .................. |Spacelanes-bugs|
+    6. Contributing .......... |Spacelanes-contributing|
+    7. Changelog ............. |Spacelanes-changelog|
+    8. Credits ............... |Spacelanes-credits|
+
+==============================================================================
+1. Basic Usage                                                *Spacelanes-usage*
+
+Insert example usage here.
+
+==============================================================================
+2. Mappings                                                *Spacelanes-mappings*
+
+By default, Spacelane functions all begin with the space key (denoted here
+as <space-leader>)
+
+  <space-leader>A maps the current buffer to spacelane a.
+  <space-leader>a opens spacelane a in the current window.
+
+This type of mapping works for all characters in [a-z].
+
+Spacelane differs from file |mark|s in that it does not consider marks to be
+tied to particular lines:  only to buffers.  This means that you can rapidly
+explore multiple buffers in a single window, without needing to remember to
+update file marks each time you switch between those buffers, and without
+needing to remember automatically-assigned buffer numbers.
+
+==============================================================================
+3. Configuration                                      *Spacelanes-configuration*
+
+Insert instructions re: changing <space-leader> here.
+
+==============================================================================
+4. License                                                  *Spacelanes-license*
+
+Insert license terms here.
+
+==============================================================================
+5. Reporting Bugs                                              *Spacelanes-bugs*
+
+Insert link to GitHub issues tracker here.
+
+==============================================================================
+6. Contributing                                        *Spacelanes-contributing*
+
+
+ vim:ts=4:et:ft=help:

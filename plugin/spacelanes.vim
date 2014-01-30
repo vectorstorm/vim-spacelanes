@@ -1,4 +1,4 @@
-" space.vim - Whee!
+" spacelane.vim - Rapid transit between commonly used files
 " Maintainer:   Trevor Powell
 " Version:      0.0.1
 
@@ -73,13 +73,23 @@ endif
 let s:space_destinations = {}
 
 function! s:Space_GoTo(label) "{{{
-	echom "GoTo" a:label " -- " s:space_destinations[a:label]
-	execute "b " s:space_destinations[a:label]
-	return 0
+	if ( has_key( s:space_destinations, a:label ) )
+		execute "e " s:space_destinations[a:label]
+		return 0
+	else
+		echom "No spacelane for route" a:label
+	endif
+	return 1
 endfunction "}}}
 
 function! s:Space_SetTo(label) "{{{
-	let s:space_destinations[a:label] = bufnr('')
-	echom "Set" a:label "to" s:space_destinations[a:label]
+	if ( bufname('') == "" )
+		echom "Clearing route" a:label
+		unlet s:space_destinations[a:label]
+		return 1
+	endif
+	let s:space_destinations[a:label] = bufname('')
+	echom a:label " : " s:space_destinations[a:label]
 	return 0
 endfunction "}}}
+
