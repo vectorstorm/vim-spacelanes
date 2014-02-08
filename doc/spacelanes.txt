@@ -11,16 +11,30 @@
 CONTENTS                                                   *Spacelanes-contents*
 
     1. Usage ................. |Spacelanes-usage|
-    2. Mappings .............. |Spacelanes-mappings|
-    3. Configuration ......... |Spacelanes-configuration|
-    4. License ............... |Spacelanes-license|
-    5. Bugs .................. |Spacelanes-bugs|
-    6. Contributing .......... |Spacelanes-contributing|
-    7. Changelog ............. |Spacelanes-changelog|
-    8. Credits ............... |Spacelanes-credits|
+    2. Rationale ............. |Spacelanes-whatisthisidonteven|
+    3. Mappings .............. |Spacelanes-mappings|
+    4. Configuration ......... |Spacelanes-configuration|
+    5. License ............... |Spacelanes-license|
+    6. Bugs .................. |Spacelanes-bugs|
+    7. Contributing .......... |Spacelanes-contributing|
+    8. Changelog ............. |Spacelanes-changelog|
+    9. Credits ............... |Spacelanes-credits|
 
 ==============================================================================
 1. Basic Usage                                                *Spacelanes-usage*
+
+By default:
+
+  <space>A maps the current buffer to spacelane a.
+  <space>a opens spacelane a in the current window.
+
+This type of map works for all letters [a-z].  Using these maps, you can
+quickly and intuitively set the files you're interested in, and pop between
+them within a single vim window.
+
+
+==============================================================================
+2. Rationale                                    *Spacelanes-whatisthisidonteven*
 
 As a programmer, I often find that I need to refer to several source files
 simultaneously.  Perhaps a source file and its header, perhaps a source file
@@ -31,12 +45,17 @@ between two files.
 But sometimes you need to quickly refer to more than just one other file.
 If you have a large screen, you might make do with splits.  If not, you might
 try tabs.  File marks sort of work, except that you need to continually update
-them if you're moving between lines, or else you soon have to navigate through
-the files each time you switch between them.
+them as you're moving around in a large file, or else they go out of date and
+become a lot less helpful.
+
+Spacelanes was built to work around this issue of rapidly switching between
+a large set of files.  Spacelanes lets you quickly designate the files that 
+you're interested in so that you may very quickly return to them -- wherever
+you were when you were last looking at them.
 
 
 ==============================================================================
-2. Mappings                                                *Spacelanes-mappings*
+3. Mappings                                                *Spacelanes-mappings*
 
 By default, Spacelane functions all begin with the space key (denoted here
 as <space-leader>)
@@ -46,31 +65,52 @@ as <space-leader>)
 
 This type of mapping works for all characters in [a-z].
 
-Spacelane differs from file |mark|s in that it does not consider marks to be
-tied to particular lines:  only to buffers.  This means that you can rapidly
-explore multiple buffers in a single window, without needing to remember to
-update file marks each time you switch between those buffers, and without
-needing to remember automatically-assigned buffer numbers.
+==============================================================================
+4. Configuration                                      *Spacelanes-configuration*
+
+If you'd rather use some other key as your <space-leader>, you may do so by
+setting a different map prefix for spacelanes.  For example, to set ',' as the
+prefix used by spacelanes, insert this line in your .vimrc:
+
+  let g:spacelanes_map_prefix = ','
+
+If you wish, you may assign "universal" spacelanes which will always be
+automatically created for you whenever you start vim.  For example, to
+create one which points at your .vimrc file and a todo.txt file, insert
+this in your .vimrc file:
+
+  let g:spacelanes_universal_destinations = {'v':"~/.vimrc", 't':"~/todo.txt"}
+
+(note that the assigned keys must be lower-case, or they will be ignored)
+
+
+Additionally, Spacelanes may optionally operate in "persistant" mode, in which
+the mappings you assign while working will be saved when you exit vim, and 
+restored the next time you start vim.
+
+This is _not_ the default behaviour (and I don't particularly recommend it),
+but if you want to give it a try, insert these lines in your .vimrc:
+
+  let g:spacelanes_persist = 1
+  let g:spacelanes_persist_file = "~/.vim/spacelanes.txt"
 
 ==============================================================================
-3. Configuration                                      *Spacelanes-configuration*
-
-Insert instructions re: changing <space-leader> here.
-
-==============================================================================
-4. License                                                  *Spacelanes-license*
+5. License                                                  *Spacelanes-license*
 
 Insert license terms here.
 
 ==============================================================================
-5. Reporting Bugs                                              *Spacelanes-bugs*
+6. Reporting Bugs                                              *Spacelanes-bugs*
 
 Insert link to GitHub issues tracker here.
 
 ==============================================================================
-6. Contributing                                        *Spacelanes-contributing*
+7. Contributing                                        *Spacelanes-contributing*
 
 ==============================================================================
-6. Contributing                                        *Spacelanes-contributing*
+8. Changelog                                              *Spacelanes-changelog*
+
+==============================================================================
+9. Credits                                                  *Spacelanes-credits*
 
  vim:ts=4:et:ft=help:
