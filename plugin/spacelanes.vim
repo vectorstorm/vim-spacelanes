@@ -65,8 +65,10 @@ function! s:Spacelane_SetTo(label) "{{{
 	return 0
 endfunction "}}}
 
-function! s:Spacelanes_List() "{{{
-	return 0
+function! Spacelanes_List() "{{{
+	for i in items(s:spacelane_destinations)
+		echom i[0] . ": " . i[1]
+	endfor
 endfunction "}}}
 
 function! Spacelane_Set(label,file) "{{{
