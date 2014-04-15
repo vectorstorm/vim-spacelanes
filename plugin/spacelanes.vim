@@ -70,6 +70,7 @@ function! Spacelanes_List() "{{{
 		echom i[0] . ": " . i[1]
 	endfor
 endfunction "}}}
+command! SpacelanesList call Spacelanes_List()
 
 function! Spacelane_Set(label,file) "{{{
 	let s:spacelane_destinations[tolower(a:label)] = a:file

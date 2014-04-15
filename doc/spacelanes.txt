@@ -29,9 +29,10 @@ By default:
   <space>a opens spacelane a in the current window.
 
 This type of map works for all letters [a-z].  Using these maps, you can
-quickly and intuitively set the files you're interested in, and pop between
-them within a single vim window.
+quickly set the files you're interested in while you're working, and pop
+between them within a single vim window.
 
+You may list the current set of spacelanes using :SpacelanesList<CR>
 
 ==============================================================================
 2. Rationale                                    *Spacelanes-whatisthisidonteven*
@@ -46,12 +47,14 @@ But sometimes you need to quickly refer to more than just one other file.
 If you have a large screen, you might make do with splits.  If not, you might
 try tabs.  File marks sort of work, except that you need to continually update
 them as you're moving around in a large file, or else they go out of date and
-become a lot less helpful.
+become a lot less helpful.  Similarly, navigating around the jumplist quickly
+becomes cumbersome when you're jumping within a file, in addition to between
+files.
 
 Spacelanes was built to work around this issue of rapidly switching between
 a large set of files.  Spacelanes lets you quickly designate the files that 
 you're interested in so that you may very quickly return to them -- wherever
-you were when you were last looking at them.
+you were when you were last looking at each of them.
 
 
 ==============================================================================
